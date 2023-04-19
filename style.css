@@ -1,0 +1,81 @@
+body,
+ul,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Layout */
+
+.wrapper {
+  /* the wrapper is the container for the layout */
+  max-width: 960px; /* 4 columns * 240px */
+  margin: 0 auto; /* center the layout */
+  padding: 0 20px;
+}
+
+.row {
+  /* the row is a flex container */
+  display: flex; /* make the row a flex container */
+  flex-wrap: wrap; /* wrap the columns */
+  margin: 0 -10px; /* 10px margin on the left and right 네거티브 마진*/
+}
+
+.col {
+  /* the column is a flex item */
+  width: 25%; /* 4 columns */
+  flex-shrink: 0; /* don't shrink the columns */
+  margin-bottom: 20px; /* 20px margin on the bottom */
+  padding: 0 10px; /* 10px padding on the left and right */
+  box-sizing: border-box; /* make the padding count */
+}
+
+/* Components */
+
+body {
+  background-color: #111;
+}
+
+.editor {
+  /* the editor is a flex item */
+  line-height: 1.6;
+  background-color: #666; /* for demo purposes */
+  color: #aaa;
+  padding: 0 30px 30px 30px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 74px;
+}
+
+.editor:hover .editor-icon {
+  transform: scale(1);
+}
+
+.editor-icon {
+  transform: scale(0.8);
+  margin-top: -50px;
+  transition: all 0.4s;
+}
+
+.editor h2 {
+  color: lime;
+  margin: 10px 0;
+}
+
+@media (max-width: 800px) {
+  .col {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .col {
+    width: 100%;
+  }
+}
